@@ -22,7 +22,7 @@ import RewardsPage from 'page/rewards';
 import FileListPublished from 'page/fileListPublished';
 import InvitePage from 'page/invite';
 import SearchPage from 'page/search';
-import LibraryPage from 'page/library';
+import LibraryPage from 'page/library2';
 import WalletPage from 'page/wallet';
 import TagsFollowingPage from 'page/tagsFollowing';
 import ChannelsFollowingPage from 'page/channelsFollowing';
@@ -52,6 +52,7 @@ import SwapPage from 'page/swap';
 import NotificationsPage from 'page/notifications';
 import SignInWalletPasswordPage from 'page/signInWalletPassword';
 import YoutubeSyncPage from 'page/youtubeSync';
+import CollectionPage from 'page/collection';
 
 import { LINKED_COMMENT_QUERY_PARAM } from 'constants/comment';
 import { parseURI, isURIValid } from 'lbry-redux';
@@ -283,6 +284,7 @@ function AppRouter(props: Props) {
       <PrivateRoute {...props} path={`/$/${PAGES.WALLET}`} exact component={WalletPage} />
       <PrivateRoute {...props} path={`/$/${PAGES.CHANNELS}`} component={ChannelsPage} />
       <PrivateRoute {...props} path={`/$/${PAGES.LIVESTREAM}`} component={LiveStreamSetupPage} />
+      <PrivateRoute {...props} path={`/$/${PAGES.COLLECTION}/:collectionId`} exact component={CollectionPage} />
       <PrivateRoute {...props} path={`/$/${PAGES.BUY}`} component={BuyPage} />
       <PrivateRoute {...props} path={`/$/${PAGES.RECEIVE}`} component={ReceivePage} />
       <PrivateRoute {...props} path={`/$/${PAGES.SEND}`} component={SendPage} />

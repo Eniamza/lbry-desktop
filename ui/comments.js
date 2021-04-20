@@ -10,6 +10,10 @@ const Comments = {
   moderation_block_list: (params: ModerationBlockParams) => fetchCommentsApi('moderation.BlockedList', params),
   comment_list: (params: CommentListParams) => fetchCommentsApi('comment.List', params),
   comment_abandon: (params: CommentAbandonParams) => fetchCommentsApi('comment.Abandon', params),
+  setting_list: (params: SettingParams) => fetchCommentsApi('setting.List', params),
+  setting_block_word: (params: BlockWordParams) => fetchCommentsApi('setting.BlockWord', params),
+  setting_unblock_word: (params: BlockWordParams) => fetchCommentsApi('setting.UnBlockWord', params),
+  setting_list_blocked_words: (params: SettingParams) => fetchCommentsApi('setting.ListBlockedWords', params),
 };
 
 function fetchCommentsApi(method: string, params: {}) {

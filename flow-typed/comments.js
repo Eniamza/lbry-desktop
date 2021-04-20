@@ -14,3 +14,18 @@ declare type CommentAbandonParams = {
 };
 
 declare type ModerationBlockParams = {};
+
+declare type SettingParams = {
+  channel_name: string,
+  channel_id: string,
+  signature: string,
+  signing_ts: string,
+};
+
+declare type BlockWordParams = {
+  channel_name: string,
+  channel_id: string,
+  signature: string,
+  signing_ts: string,
+  words: string, // CSV list of containing words to block comment on content
+};

@@ -816,6 +816,7 @@
   "try again in a few seconds.": "try again in a few seconds.",
   "Any": "Any",
   "Video": "Video",
+  "Video/Audio": "Video/Audio",
   "Document": "Document",
   "Duration": "Duration",
   "Long": "Long",
@@ -1798,7 +1799,7 @@
   "Choose Replay": "Choose Replay",
   "Choose a replay file, or select None": "Choose a replay file, or select None",
   "No replays found.": "No replays found.",
-  "Audio files require a thumbnail. Please upload or provide an image URL above.": "Audio files require a thumbnail. Please upload or provide an image URL above.",
+  "A thumbnail is required. Please upload or provide an image URL above.": "A thumbnail is required. Please upload or provide an image URL above.",
   "You can upload your own recording or select a replay when your stream is over": "You can upload your own recording or select a replay when your stream is over",
   "This channel isn't staking enough LBRY Credits for inline image previews.": "This channel isn't staking enough LBRY Credits for inline image previews.",
   "--end--": "--end--"

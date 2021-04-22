@@ -14,6 +14,13 @@ declare type Comment = {
   is_pinned: boolean,
 };
 
+declare type PerChannelSettings = {
+  words: Array<string>,
+  commentsEnabled: boolean,
+  minTipAmountComment: number,
+  minTipAmountSuperChat: number,
+};
+
 // todo: relate individual comments to their commentId
 declare type CommentsState = {
   commentsByUri: { [string]: string },
@@ -31,6 +38,9 @@ declare type CommentsState = {
   fetchingModerationBlockList: boolean,
   blockingByUri: {},
   unBlockingByUri: {},
+  settingsByChannelId: { [string]: PerChannelSettings }, // ChannelID -> settings
+  fetchingSettings: boolean,
+  fetchingBlockedWords: boolean,
 };
 
 declare type CommentReactParams = {

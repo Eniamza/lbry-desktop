@@ -77,7 +77,6 @@ type Props = {
   isAuthenticated: boolean,
   socketConnect: () => void,
   syncLoop: (?boolean) => void,
-  syncEnabled: boolean,
   currentModal: any,
   syncFatalError: boolean,
   activeChannelClaim: ?ChannelClaim,
@@ -85,6 +84,7 @@ type Props = {
   setActiveChannelIfNotSet: () => void,
   setIncognito: (boolean) => void,
   fetchModBlockedList: () => void,
+  fetchCreatorSettings: () => void,
 };
 
 function App(props: Props) {
@@ -116,6 +116,7 @@ function App(props: Props) {
     setActiveChannelIfNotSet,
     setIncognito,
     fetchModBlockedList,
+    fetchCreatorSettings,
   } = props;
 
   const appRef = useRef();
@@ -249,6 +250,7 @@ function App(props: Props) {
 
     if (hasMyChannels) {
       fetchModBlockedList();
+      fetchCreatorSettings();
     }
   }, [hasMyChannels, hasNoChannels, hasActiveChannelClaim, setActiveChannelIfNotSet, setIncognito]);
 

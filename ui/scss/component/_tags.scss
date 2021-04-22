@@ -73,3 +73,10 @@
   margin: calc(2rem / 10) calc(2rem / 10);
   max-width: 20rem;
 }
+
+.tag--blocked-words {
+  .tag {
+    color: var(--color-text);
+    background-color: var(--color-gray-5);
+  }
+}

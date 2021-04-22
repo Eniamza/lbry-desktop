@@ -273,17 +273,29 @@ export default handleActions(
         const superChatCommentsForUri = superChatForUri && superChatForUri.comments;
 
         let sortedSuperChatComments = [];
+        let hasAddedNewComment = false;
         if (superChatCommentsForUri && superChatCommentsForUri.length > 0) {
-          for (var i = 0; i < superChatCommentsForUri.length - 1; i++) {
-            const superChat = superChatCommentsForUri[i];
-            if (superChat.support_amount < comment.support_amount) {
+          // Go for the entire length of superChatCommentsForUri since a comment will be added to this list
+          for (var i = 0; i < superChatCommentsForUri.length; i++) {
+            const existingSuperChat = superChatCommentsForUri[i];
+            if (existingSuperChat.support_amount < comment.support_amount && !hasAddedNewComment) {
+              hasAddedNewComment = true;
               sortedSuperChatComments.push(comment);
-              sortedSuperChatComments.push(superChat);
+              sortedSuperChatComments.push(existingSuperChat);
+            } else {
+              sortedSuperChatComments.push(existingSuperChat);
             }
 
-            sortedSuperChatComments.push(superChat);
+            // If the new superchat hasn't been added yet, it must be the smallest superchat in the list
+            if (
+              i === superChatCommentsForUri.length - 1 &&
+              sortedSuperChatComments.length === superChatCommentsForUri.length
+            ) {
+              sortedSuperChatComments.push(comment);
+            }
           }
-          superChatsByUri[uri].comments.unshift(comment);
+
+          superChatsByUri[uri].comments = sortedSuperChatComments;
           superChatsByUri[uri].totalAmount += 1;
         } else {
           superChatsByUri[uri] = { comments: [comment], totalAmount: comment.support_amount };

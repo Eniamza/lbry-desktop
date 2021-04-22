@@ -77,6 +77,12 @@ $metadata-z-index: 1;
   width: 3rem;
 }
 
+.channel-thumbnail--xsmall {
+  height: 2.1rem;
+  width: 2.1rem;
+  margin-right: var(--spacing-xs);
+}
+
 .chanel-thumbnail--waiting {
   background-color: var(--color-gray-5);
   border-radius: var(--border-radius);

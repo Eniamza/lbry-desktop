@@ -15,6 +15,7 @@ type Props = {
   fee?: boolean,
   className?: string,
   noFormat?: boolean,
+  size?: number,
 };
 
 class CreditAmount extends React.PureComponent<Props> {
@@ -39,8 +40,8 @@ class CreditAmount extends React.PureComponent<Props> {
       showLBC,
       className,
       noFormat,
+      size,
     } = this.props;
-
     const minimumRenderableAmount = 10 ** (-1 * precision);
     const fullPrice = formatFullPrice(amount, 2);
     const isFree = parseFloat(amount) === 0;
@@ -66,7 +67,7 @@ class CreditAmount extends React.PureComponent<Props> {
       }
 
       if (showLBC) {
-        amountText = <LbcSymbol postfix={amountText} />;
+        amountText = <LbcSymbol postfix={amountText} size={size} />;
       }
 
       if (fee) {

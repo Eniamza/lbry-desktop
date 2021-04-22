@@ -168,7 +168,14 @@
 }
 
 .main--livestream {
-  margin-top: var(--spacing-m);
+  width: 100%;
+  margin: var(--spacing-xs);
+
+  @media (min-width: $breakpoint-small) {
+    margin: var(--spacing-m);
+    margin-right: auto;
+    width: calc(100vw - var(--livestream-comments-width) - var(--spacing-m) * 2);
+  }
 }
 
 .main--full-width {

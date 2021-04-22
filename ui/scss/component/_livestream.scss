@@ -1,4 +1,4 @@
-$discussion-header__height: 2.75rem;
+$discussion-header__height: 3rem;
 
 .livestream {
   flex: 1;
@@ -50,13 +50,20 @@ $discussion-header__height: 2.75rem;
 
 .livestream-discussion__header {
   border-bottom: 1px solid var(--color-border);
-  height: $discussion-header__height;
+  padding-bottom: var(--spacing-s);
+  margin-bottom: 0;
+  align-items: center;
+
+  @media (min-width: $breakpoint-small) {
+    height: $discussion-header__height;
+    padding: 0 var(--spacing-xs);
+  }
 }
 
 .livestream-discussion__title {
   @extend .card__title-section;
   @extend .card__title-section--small;
-  padding: var(--spacing-s);
+  padding: 0;
 }
 
 .livestream__comments-wrapper {
@@ -122,6 +129,7 @@ $discussion-header__height: 2.75rem;
 
   .channel-thumbnail {
     margin-top: var(--spacing-xxs);
+    flex-shrink: 0;
   }
 }
 
@@ -198,15 +206,18 @@ $discussion-header__height: 2.75rem;
 }
 
 .livestream-superchats__wrapper {
-  border-bottom: 1px solid var(--color-border);
-  padding: var(--spacing-xs);
-  font-size: var(--font-small);
   flex-shrink: 0;
   position: relative;
   overflow-x: scroll;
   width: var(--livestream-comments-width);
+  padding: var(--spacing-s) var(--spacing-xs);
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--font-small);
   background-color: var(--color-card-background);
-  z-index: 1000;
+
+  @media (min-width: $breakpoint-small) {
+    padding: var(--spacing-xs);
+  }
 }
 
 .livestream-superchat__amount-large {
@@ -229,8 +240,6 @@ $discussion-header__height: 2.75rem;
 
   .channel-thumbnail {
     margin-right: var(--spacing-xs);
-    // flex-shrink: 0;
-    // max-width: 2.5rem;
   }
 
   &:first-of-type {
@@ -263,10 +272,6 @@ $discussion-header__height: 2.75rem;
   }
 }
 
-.livestream-superchat__thumbnail {
-  //   display: flex;
-}
-
 .livestream-superchat__info {
   display: flex;
   flex-direction: column;
@@ -297,6 +302,8 @@ $discussion-header__height: 2.75rem;
   position: relative;
 }
 
+// This is just a two small circles that overlap to make it look like
+// the banner and the left border are connected
 .livestream-superchat__banner-corner {
   height: calc(var(--border-radius) * 2);
   width: calc(var(--border-radius) * 2);
@@ -311,15 +318,11 @@ $discussion-header__height: 2.75rem;
     content: '';
     height: calc(var(--border-radius) * 2);
     width: calc(var(--border-radius) * 2);
-    // border-radius: calc(var(--border-radius) / 2);
     border-top-left-radius: var(--border-radius);
     background-color: var(--color-card-background);
-    // background-color: black;
-
     position: absolute;
     bottom: 0;
     left: 0;
-
     transform: translateX(25%) translateY(50%);
   }
 }

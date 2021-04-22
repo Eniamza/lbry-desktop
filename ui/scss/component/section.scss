@@ -114,10 +114,10 @@
   position: relative;
   display: flex;
   align-items: center;
-  margin-top: var(--spacing-l);
+  margin-top: var(--spacing-m);
 
   ~ .section {
-    margin-top: var(--spacing-l);
+    margin-top: var(--spacing-m);
   }
 
   &:only-child,

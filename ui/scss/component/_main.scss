@@ -168,7 +168,7 @@
 }
 
 .main--livestream {
-  width: 100%;
+  width: calc(100vw - var(--spacing-xs) * 2);
   margin: var(--spacing-xs);
 
   @media (min-width: $breakpoint-small) {

@@ -21,6 +21,7 @@ import { useHistory } from 'react-router';
 import CommentCreate from 'component/commentCreate';
 import CommentMenuList from 'component/commentMenuList';
 import UriIndicator from 'component/uriIndicator';
+import CreditAmount from 'component/common/credit-amount';
 
 type Props = {
   clearPlayingUri: () => void,
@@ -206,6 +207,8 @@ function Comment(props: Props) {
                 onClick={handleTimeClick}
                 label={<DateTime date={timePosted} timeAgo />}
               />
+
+              {supportAmount > 0 && <CreditAmount amount={supportAmount} />}
 
               {isPinned && (
                 <span className="comment__pin">

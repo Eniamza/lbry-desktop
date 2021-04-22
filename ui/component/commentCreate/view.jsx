@@ -134,7 +134,7 @@ export function CommentCreate(props: Props) {
         const { txid } = response;
         setTimeout(() => {
           handleCreateComment(txid);
-        }, 1000);
+        }, 1500);
       },
       () => {
         setIsSubmitting(false);

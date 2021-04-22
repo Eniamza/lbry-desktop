@@ -171,11 +171,8 @@ export default function LivestreamComments(props: Props) {
                   key={comment.comment_id}
                   uri={uri}
                   authorUri={comment.channel_url}
-                  author={comment.channel_name}
-                  claimId={comment.claim_id}
                   commentId={comment.comment_id}
                   message={comment.comment}
-                  timePosted={comment.timestamp * 1000}
                   supportAmount={comment.support_amount}
                 />
               ))}

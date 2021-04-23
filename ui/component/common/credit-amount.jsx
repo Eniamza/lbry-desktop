@@ -16,6 +16,8 @@ type Props = {
   className?: string,
   noFormat?: boolean,
   size?: number,
+  superChat?: boolean,
+  superChatLight?: boolean,
 };
 
 class CreditAmount extends React.PureComponent<Props> {
@@ -42,6 +44,7 @@ class CreditAmount extends React.PureComponent<Props> {
       noFormat,
       size,
       superChat,
+      superChatLight,
     } = this.props;
     const minimumRenderableAmount = 10 ** (-1 * precision);
     const fullPrice = formatFullPrice(amount, 2);
@@ -81,6 +84,7 @@ class CreditAmount extends React.PureComponent<Props> {
         title={fullPrice}
         className={classnames(className, {
           'super-chat': superChat,
+          'super-chat--light': superChatLight,
         })}
       >
         <span className="credit-amount">{amountText}</span>

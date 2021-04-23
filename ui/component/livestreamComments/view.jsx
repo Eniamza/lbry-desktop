@@ -8,6 +8,7 @@ import Button from 'component/button';
 import UriIndicator from 'component/uriIndicator';
 import CreditAmount from 'component/common/credit-amount';
 import ChannelThumbnail from 'component/channelThumbnail';
+import Tooltip from 'component/common/tooltip';
 
 type Props = {
   uri: string,
@@ -145,20 +146,22 @@ export default function LivestreamComments(props: Props) {
             <div className="livestream-superchats__wrapper">
               <div className="livestream-superchats__inner">
                 {superChats.map((superChat: Comment) => (
-                  <div className="livestream-superchat" key={superChat.comment_id}>
-                    <div className="livestream-superchat__thumbnail">
-                      <ChannelThumbnail uri={superChat.channel_url} xsmall />
-                    </div>
+                  <Tooltip key={superChat.comment_id} label={superChat.comment}>
+                    <div className="livestream-superchat">
+                      <div className="livestream-superchat__thumbnail">
+                        <ChannelThumbnail uri={superChat.channel_url} xsmall />
+                      </div>
 
-                    <div className="livestream-superchat__info">
-                      <UriIndicator uri={superChat.channel_url} link />
-                      <CreditAmount
-                        size={10}
-                        className="livestream-superchat__amount-large"
-                        amount={superChat.support_amount}
-                      />
+                      <div className="livestream-superchat__info">
+                        <UriIndicator uri={superChat.channel_url} link />
+                        <CreditAmount
+                          size={10}
+                          className="livestream-superchat__amount-large"
+                          amount={superChat.support_amount}
+                        />
+                      </div>
                     </div>
-                  </div>
+                  </Tooltip>
                 ))}
               </div>
             </div>

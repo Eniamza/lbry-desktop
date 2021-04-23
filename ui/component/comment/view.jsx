@@ -208,7 +208,7 @@ function Comment(props: Props) {
                 label={<DateTime date={timePosted} timeAgo />}
               />
 
-              {supportAmount > 0 && <CreditAmount amount={supportAmount} superChat size={12} />}
+              {supportAmount > 0 && <CreditAmount amount={supportAmount} superChatLight size={12} />}
 
               {isPinned && (
                 <span className="comment__pin">

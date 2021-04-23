@@ -208,7 +208,7 @@ function Comment(props: Props) {
                 label={<DateTime date={timePosted} timeAgo />}
               />
 
-              {supportAmount > 0 && <CreditAmount amount={supportAmount} />}
+              {supportAmount > 0 && <CreditAmount amount={supportAmount} superChat size={12} />}
 
               {isPinned && (
                 <span className="comment__pin">
@@ -244,6 +244,7 @@ function Comment(props: Props) {
             {isEditing ? (
               <Form onSubmit={handleSubmit}>
                 <FormField
+                  className="comment__edit-input"
                   type={!SIMPLE_SITE && advancedEditor ? 'markdown' : 'textarea'}
                   name="editing_comment"
                   value={editedMessage}
@@ -251,7 +252,7 @@ function Comment(props: Props) {
                   onChange={handleEditMessageChanged}
                   textAreaMaxLength={FF_MAX_CHARS_IN_COMMENT}
                 />
-                <div className="section__actions">
+                <div className="section__actions section__actions--no-margin">
                   <Button
                     button="primary"
                     type="submit"
@@ -315,12 +316,6 @@ function Comment(props: Props) {
           </div>
         </div>
       </div>
-
-      {/* {supportAmount > 0 && (
-        <span className="comment__superchat-amount">
-          <LbcSymbol postfix={supportAmount} size={12} />
-        </span>
-      )} */}
 
       <CommentsReplies threadDepth={threadDepth - 1} uri={uri} parentId={commentId} linkedComment={linkedComment} />
     </li>

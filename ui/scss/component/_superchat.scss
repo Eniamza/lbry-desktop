@@ -1,0 +1,11 @@
+.super-chat {
+  border-radius: var(--border-radius);
+  background: linear-gradient(to right, var(--color-superchat), var(--color-superchat-3));
+  padding: 0.2rem var(--spacing-xs);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-xsmall);
+
+  .credit-amount {
+    color: var(--color-black);
+  }
+}

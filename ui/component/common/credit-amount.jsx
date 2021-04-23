@@ -41,6 +41,7 @@ class CreditAmount extends React.PureComponent<Props> {
       className,
       noFormat,
       size,
+      superChat,
     } = this.props;
     const minimumRenderableAmount = 10 ** (-1 * precision);
     const fullPrice = formatFullPrice(amount, 2);
@@ -76,7 +77,12 @@ class CreditAmount extends React.PureComponent<Props> {
     }
 
     return (
-      <span title={fullPrice} className={classnames(className, {})}>
+      <span
+        title={fullPrice}
+        className={classnames(className, {
+          'super-chat': superChat,
+        })}
+      >
         <span className="credit-amount">{amountText}</span>
 
         {isEstimate ? (

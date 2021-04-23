@@ -56,7 +56,7 @@ $discussion-header__height: 3rem;
 
   @media (min-width: $breakpoint-small) {
     height: $discussion-header__height;
-    padding: 0 var(--spacing-xs);
+    padding: 0 var(--spacing-s);
   }
 }
 
@@ -112,7 +112,7 @@ $discussion-header__height: 3rem;
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
     width: 5px;
-    background-color: #fcd34d;
+    background-color: var(--color-superchat);
     content: '';
   }
 }
@@ -142,6 +142,7 @@ $discussion-header__height: 3rem;
 .livestream__comment-create {
   padding: var(--spacing-s);
   border-top: 1px solid var(--color-border);
+  margin-top: auto;
 }
 
 .livestream__channel-link {
@@ -243,7 +244,7 @@ $discussion-header__height: 3rem;
   }
 
   &:first-of-type {
-    background-color: #fcd34d;
+    background-color: var(--color-superchat);
 
     .channel-name {
       color: var(--color-text);
@@ -258,13 +259,13 @@ $discussion-header__height: 3rem;
   }
 
   &:nth-of-type(2) {
-    background-color: #fde68a;
+    background-color: var(--color-superchat-2);
   }
   &:nth-of-type(3) {
-    background-color: #fef3c7;
+    background-color: var(--color-superchat-3);
   }
   &:nth-of-type(4) {
-    background-color: #fffbeb;
+    background-color: var(--color-superchat-4);
   }
 
   .channel-name {
@@ -279,25 +280,10 @@ $discussion-header__height: 3rem;
   font-size: var(--font-xsmall);
 }
 
-.livestream__superchat--tooltip {
-  @extend .livestream-superchat;
-  color: var(--color-white);
-  background-color: transparent !important;
-  padding: 0;
-
-  .channel-name,
-  .credit-amount {
-    color: var(--color-tooltip-text) !important;
-  }
-}
-
 .livestream-superchat__banner {
-  font-size: var(--font-xsmall);
   border-top-right-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
-  background: linear-gradient(to right, #fcd34d, #fef3c7);
   padding: 0.25rem var(--spacing-s);
-  font-weight: var(--font-weight-bold);
   display: inline-block;
   position: relative;
 }
@@ -309,7 +295,7 @@ $discussion-header__height: 3rem;
   width: calc(var(--border-radius) * 2);
   border-radius: 50%;
   position: absolute;
-  background-color: #fcd34d;
+  background-color: var(--color-superchat);
   bottom: 0;
   left: 0;
   transform: translateX(25%) translateY(50%);

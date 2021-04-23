@@ -8,7 +8,7 @@ import Icon from 'component/common/icon';
 import classnames from 'classnames';
 import CommentMenuList from 'component/commentMenuList';
 import UriIndicator from 'component/uriIndicator';
-import LbcSymbol from 'component/common/lbc-symbol';
+import CreditAmount from 'component/common/credit-amount';
 
 type Props = {
   uri: string,
@@ -35,11 +35,9 @@ function Comment(props: Props) {
       onMouseOut={() => setMouseHover(false)}
     >
       {supportAmount > 0 && (
-        <div className="livestream-superchat__banner">
+        <div className="super-chat livestream-superchat__banner">
           <div className="livestream-superchat__banner-corner" />
-          <span className="livestream-superchat__amount">
-            <LbcSymbol postfix={supportAmount} />
-          </span>
+          <CreditAmount amount={supportAmount} superChat className="livestream-superchat__amount" />
         </div>
       )}
 

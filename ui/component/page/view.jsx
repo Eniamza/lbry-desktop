@@ -115,7 +115,7 @@ function Page(props: Props) {
             'main--livestream': livestream,
           })}
         >
-          <div>{children}</div>
+          {children}
 
           {!isMobile && rightSide && <div className="main__right-side">{rightSide}</div>}
         </main>
